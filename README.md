@@ -2,17 +2,22 @@
 
 Authors: Le-Anh Tran, Dong-Chul Park
 
+## ***Updates***
+This repo is being updated...
+
 ## I. Introduction
 
 <p align="center">
-<img src="docs/d-edn-gtm0.png" width="1000">
+<img src="docs/d-edn-gtm.png" width="1000">
 </p>
 
 ## II. Results
 
 2.1 Chart
-<p align="center">
-<img src="docs/ssim_densehaze.png" width="1000">
+
+SSIM comparison on Dense-HAZE dataset
+<p>
+<img src="docs/ssim_densehaze.png" width="600">
 </p>
 
 2.2 Quantitative Results
@@ -114,8 +119,6 @@ Authors: Le-Anh Tran, Dong-Chul Park
 
 ## References
 - https://github.com/tranleanh/edn-gtm
-
-Created on 29 Sept., 2022.
 
 Have fun!
 
