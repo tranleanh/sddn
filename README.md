@@ -92,7 +92,7 @@ SSIM comparison on Dense-HAZE dataset
   </tr>
   <tr>
     <td>AECR-Net (CVPR’21)</td>
-    <td>15.80</td>
+    <td> <b>15.80</b> </td>
     <td>0.4660</td>
     <td>19.88</td>
     <td>0.7173</td>
@@ -102,16 +102,16 @@ SSIM comparison on Dense-HAZE dataset
     <td>EDN-GTM (PCS’22)</td>
     <td>15.43</td>
     <td>0.5200</td>
-    <td>20.24</td>
+    <td> <b>20.24</b> </td>
     <td>0.7178</td>
     <td>49.36M</td>
   </tr>
   <tr>
-    <td>Distilled EDN-GTM (ours)</td>
+    <td>*** <b>Distilled EDN-GTM (ours)</b> ***</td>
     <td>15.30</td>
-    <td>0.5490</td>
+    <td> <b>0.5490</b> </td>
     <td>19.64</td>
-    <td>0.7206</td>
+    <td> <b>0.7206</b> </td>
     <td>2.10M (&#8595;96%)</td>
   </tr>
 </table>
