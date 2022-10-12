@@ -5,7 +5,7 @@ Authors: Le-Anh Tran, Dong-Chul Park
 ## I. Introduction
 
 <p align="center">
-<img src="docs/d-edn-gtm.jpg" width="1000">
+<img src="docs/d_edn_gtm.jpg" width="1000">
 </p>
 
 ## II. Results
