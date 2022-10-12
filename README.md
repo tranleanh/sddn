@@ -1,4 +1,4 @@
-# D-EDN-GTM: Distilled Encoder-decoder Network with Guided Transmission Map for Real-time Driving Dehazing
+# D-EDN-GTM: Distilled Encoder-decoder Network with Guided Transmission Map for Compact Single Image Dehazing
 
 Authors: Le-Anh Tran, Dong-Chul Park
 
