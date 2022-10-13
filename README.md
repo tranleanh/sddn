@@ -108,10 +108,10 @@ SSIM comparison on Dense-HAZE dataset
   </tr>
   <tr>
     <td>*** <b>Distilled EDN-GTM (ours)</b> ***</td>
-    <td>15.30</td>
-    <td> <b>0.5490</b> </td>
-    <td>19.64</td>
-    <td> <b>0.7206</b> </td>
+    <td>15.57</td>
+    <td> <b>0.5528</b> </td>
+    <td>19.74</td>
+    <td> <b>0.7204</b> </td>
     <td>2.10M (&#8595;96%)</td>
   </tr>
 </table>
