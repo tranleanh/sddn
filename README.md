@@ -117,10 +117,10 @@ SSIM-Parameters trade-off comparison on Dense-HAZE (top) and NH-HAZE (bottom) da
   <tr>
     <td>*** <b>Distilled EDN-GTM (ours)</b> ***</td>
     <td>15.57</td>
-    <td> <b>0.5528</b> </td>
+    <td> <b>0.5528 (&#8593;6.3%) </b> </td>
     <td>19.76</td>
-    <td> <b>0.7229</b> </td>
-    <td>2.10M (&#8595;96%)</td>
+    <td> <b>0.7229 (&#8593;0.7%)</b> </td>
+    <td> <b>2.10M (&#8595;96%)</b> </td>
   </tr>
 </table>
 
