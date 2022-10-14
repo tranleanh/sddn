@@ -1,11 +1,15 @@
-# D-EDN-GTM: Distilled Encoder-decoder Network with Guided Transmission Map for Compact Single Image Dehazing
+# D-EDN-GTM: Distilled Encoder-decoder Network with Guided Transmission Map for Compact Single Image Haze Removal
 
-Authors: Le-Anh Tran, Dong-Chul Park
+Authors: [Le-Anh Tran](https://tranleanh.github.io/), [Dong-Chul Park](https://ieeexplore.ieee.org/author/37275453300)
 
 ## ***Updates***
-This repo is being updated...
+- [x] Results on benchmarks
+- [ ] Pre-trained weights & Inference code
+- [ ] Training code
 
 ## I. Introduction
+
+Diagram of the framework:
 
 <p align="center">
 <img src="docs/d-edn-gtm.png" width="1000">
@@ -13,14 +17,18 @@ This repo is being updated...
 
 ## II. Results
 
-2.1 Chart
+### 2.1 Charts
 
-SSIM comparison on Dense-HAZE dataset
+SSIM-Parameters trade-off comparison on Dense-HAZE (left) and NH-HAZE (right) datasets:
+
 <p>
-<img src="docs/ssim_densehaze.png" width="600">
+<img src="docs/ssim_dense.png" width="495">
+<img src="docs/ssim_nh.png" width="495">
 </p>
 
-2.2 Quantitative Results
+
+### 2.2 Quantitative Results
+
 <table>
   <tr>
     <th rowspan="2">Method</th>
@@ -110,15 +118,22 @@ SSIM comparison on Dense-HAZE dataset
     <td>*** <b>Distilled EDN-GTM (ours)</b> ***</td>
     <td>15.57</td>
     <td> <b>0.5528</b> </td>
-    <td>19.74</td>
-    <td> <b>0.7204</b> </td>
+    <td>19.76</td>
+    <td> <b>0.7229</b> </td>
     <td>2.10M (&#8595;96%)</td>
   </tr>
 </table>
 
 
 ## References
+
+Source Code:
+
 - https://github.com/tranleanh/edn-gtm
+
+Papers:
+
+- [A novel encoder-decoder network with guided transmission map for single image dehazing](https://www.sciencedirect.com/science/article/pii/S1877050922008201)
 
 Have fun!
 
