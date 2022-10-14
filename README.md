@@ -19,11 +19,11 @@ Diagram of the framework:
 
 ### 2.1 Charts
 
-SSIM-Parameters trade-off comparison on Dense-HAZE (left) and NH-HAZE (right) datasets:
+SSIM-Parameters trade-off comparison on Dense-HAZE (top) and NH-HAZE (bottom) datasets:
 
 <p>
-<img src="docs/ssim_dense.png" width="495">
-<img src="docs/ssim_nh.png" width="495">
+<img src="docs/ssim_dense.png" width="500">
+<img src="docs/ssim_nh.png" width="500">
 </p>
 
 
