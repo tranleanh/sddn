@@ -1,4 +1,4 @@
-# D-EDN-GTM: Distilled Encoder-decoder Network with Guided Transmission Map for Compact Single Image Haze Removal
+# SDDN: Soft knowledge-based Distilled Dehazing Network
 
 Authors: [Le-Anh Tran](https://tranleanh.github.io/), [Dong-Chul Park](https://ieeexplore.ieee.org/author/37275453300)
 
