@@ -1,6 +1,6 @@
 # SDDN: Soft knowledge-based Distilled Dehazing Network
 
-Authors: [Le-Anh Tran](https://tranleanh.github.io/), [Dong-Chul Park](https://ieeexplore.ieee.org/author/37275453300)
+Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
 ## ***Updates***
 - [x] Results on benchmarks
