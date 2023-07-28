@@ -9,14 +9,18 @@ Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl
 
 ## I. Introduction
 
+(to be updated)
+<!--
 Diagram of the framework:
 
 <p align="center">
 <img src="docs/d-edn-gtm.png" width="1000">
 </p>
-
+ -->
 ## II. Results
 
+(to be updated)
+<!--
 ### 2.1 Charts
 
 SSIM-Parameters trade-off comparison on Dense-HAZE (top) and NH-HAZE (bottom) datasets:
@@ -123,17 +127,12 @@ SSIM-Parameters trade-off comparison on Dense-HAZE (top) and NH-HAZE (bottom) da
     <td> <b>2.10M (&#8595;96%)</b> </td>
   </tr>
 </table>
-
+ -->
 
 ## References
 
-Source Code:
-
-- https://github.com/tranleanh/edn-gtm
-
-Papers:
-
 - [A novel encoder-decoder network with guided transmission map for single image dehazing](https://www.sciencedirect.com/science/article/pii/S1877050922008201)
+- https://github.com/tranleanh/edn-gtm
 
 Have fun!
 
