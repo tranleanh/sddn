@@ -129,11 +129,6 @@ SSIM-Parameters trade-off comparison on Dense-HAZE (top) and NH-HAZE (bottom) da
 </table>
  -->
 
-## References
 
-- [A novel encoder-decoder network with guided transmission map for single image dehazing](https://www.sciencedirect.com/science/article/pii/S1877050922008201)
-- https://github.com/tranleanh/edn-gtm
-
-Have fun!
 
 LA Tran
