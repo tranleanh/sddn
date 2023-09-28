@@ -9,14 +9,14 @@ Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl
 
 ## I. Introduction
 
-(to be updated)
-<!--
 Diagram of the framework:
 
 <p align="center">
-<img src="docs/d-edn-gtm.png" width="1000">
+<img src="docs/SDDN.png" width="1000">
 </p>
- -->
+
+(to be updated)
+
 ## II. Results
 
 (to be updated)
