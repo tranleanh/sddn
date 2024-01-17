@@ -25,5 +25,18 @@ Quantitative results on I-HAZE, O-HAZE, Dense-HAZE, and NH-HAZE:
 <img src="docs/results_ancuti.png" width="1000">
 </p>
 
+## Citation
+
+Please cite our works if you use the data in this repo. 
+
+```bibtex
+@misc{tran2024soft,
+  author = {Tran, Le-Anh and Park, Dong-Chul},
+  title = {Soft knowledge-based Distilled Dehazing Networks},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository}
+}
+```
 
 LA Tran
