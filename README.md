@@ -27,7 +27,7 @@ Quantitative results on I-HAZE, O-HAZE, Dense-HAZE, and NH-HAZE:
 
 ## Citation
 
-Please cite our works if you use the data in this repo. 
+Please cite our work if you use the data in this repo. 
 
 ```bibtex
 @misc{tran2024soft,
