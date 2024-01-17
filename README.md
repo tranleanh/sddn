@@ -1,8 +1,10 @@
-# SDDN: Soft knowledge-based Distilled Dehazing Networks
+# SDDN: Soft Knowledge-based Distilled Dehazing Networks
+
+This repo contains the official implementation of the paper "Soft Knowledge-based Distilled Dehazing Networks".
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
-## ***Updates***
+## Updates
 - [x] Results on benchmarks
 - [ ] Pre-trained weights & Inference code
 - [ ] Training code
@@ -15,15 +17,28 @@ Diagram of the framework:
 <img src="docs/SDDN.png" width="1000">
 </p>
 
-(to be updated)
-
 ## Results
 
-Quantitative results on I-HAZE, O-HAZE, Dense-HAZE, and NH-HAZE:
+### Quantitative results on I-HAZE, O-HAZE, Dense-HAZE, and NH-HAZE:
 
 <p align="center">
 <img src="docs/results_ancuti.png" width="1000">
 </p>
+
+### Qualitative Results:
+
+<p align="center">
+<img src="docs/results_ihaze_ohaze.png" width="1000">
+</p>
+
+<p align="center">
+<img src="docs/results_densehaze_nhhaze.png" width="1000">
+</p>
+
+<p align="center">
+<img src="docs/results_sotsoutdoor_hsts.png" width="1000">
+</p>
+
 
 ## Citation
 
