@@ -1,5 +1,7 @@
 # SDDN: Soft Knowledge-based Distilled Dehazing Networks
 
+[![Weights](https://img.shields.io/badge/PretrainedModels-Hugging%20Face-gold)](https://huggingface.co/tranleanh/sddn)
+
 This repo contains the official implementation of the paper "Soft Knowledge-based Distilled Dehazing Networks".
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
