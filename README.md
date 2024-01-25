@@ -16,7 +16,7 @@ Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl
 Diagram of the framework:
 
 <p align="center">
-<img src="docs/SDDN.png" width="1000">
+<img src="docs/SDDN_Framework.jpg" width="1000">
 </p>
 
 ## Results
