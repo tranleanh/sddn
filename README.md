@@ -41,6 +41,10 @@ Diagram of the framework:
 <img src="docs/results_sotsoutdoor_hsts.png" width="1000">
 </p>
 
+<p align="center">
+<img src="docs/results_natural.png" width="1000">
+</p>
+
 
 ## Citation
 
