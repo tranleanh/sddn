@@ -8,9 +8,12 @@ This repo contains the official implementation of the paper "Soft Knowledge-base
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
 ## Updates
-- [x] Results on benchmarks
-- [ ] Pre-trained weights & Inference code
 - [ ] Training code
+- [ ] Inference code
+- [x] Pre-trained weights ([Hugging Face](https://huggingface.co/tranleanh/sddn))
+- [x] Results on benchmarks (I-HAZE, O-HAZE, Dense-HAZE, NH-HAZE, SOTS-Outdoor, HSTS)
+
+
 
 ## Introduction
 
