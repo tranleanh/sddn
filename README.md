@@ -25,7 +25,7 @@ Diagram of the framework:
 
 ## Results
 
-### Quantitative results on I-HAZE, O-HAZE, Dense-HAZE, and NH-HAZE:
+### Quantitative results:
 
 <p align="center">
 <img src="docs/quantitative_results.png" width="1000">
