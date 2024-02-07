@@ -3,7 +3,7 @@
 [![Models](https://img.shields.io/badge/Models-Hugging_Face-gold)](https://huggingface.co/tranleanh/sddn)
 [![Paper](https://img.shields.io/badge/Paper-TechRxiv-white)](https://www.techrxiv.org/doi/full/10.36227/techrxiv.170723333.32153858/v1)
 
-This repo contains the official implementation of the paper "Soft Knowledge-based Distilled Dehazing Networks".
+The official implementation of the paper "Soft Knowledge-based Distilled Dehazing Networks".
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
 
