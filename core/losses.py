@@ -53,15 +53,15 @@ def perceptual_and_transmission_guided_loss(guide):
     return loss
 
 
-def soft_perceptual_and_transmission_guided_loss(guide, slabel_decay):
+def soft_perceptual_and_transmission_guided_loss(guide, loss_decay):
     A = 1
     B = 1
     def loss(y_true, y_pred):
-        return (A*perceptual_loss(y_true, y_pred) + B*transmission_guided_loss(y_true, y_pred, guide))*slabel_decay
+        return (A*perceptual_loss(y_true, y_pred) + B*transmission_guided_loss(y_true, y_pred, guide))*loss_decay
     return loss
 
 
-def soft_l2_loss_hint(slabel_decay):
+def soft_l2_loss_hint(loss_decay):
     def loss(y_true, y_pred):
-        return l2_loss_hint(y_true, y_pred)*slabel_decay
+        return l2_loss_hint(y_true, y_pred)*loss_decay
     return loss

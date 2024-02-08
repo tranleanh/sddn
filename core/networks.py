@@ -57,7 +57,7 @@ def gan_model(generator, discriminator):
 
 
 ### SDDN
-def unet_spp_swish_generator_model():
+def SDDN(ch_mul=0.25):
        
     inputs = Input(image_shape)     # H
     
