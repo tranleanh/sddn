@@ -18,21 +18,47 @@ The completion of this project is currently in progress, please stay tuned for u
 
 ## Introduction
 
-Diagram of the framework:
+#### Framework diagram
 
 <p align="center">
 <img src="docs/SDDN_Framework.jpg" width="1000">
 </p>
 
+## Test
+
+#### Command
+```
+python test_dehaze.py --model_path {weight_path} \
+                      --image_path {input_folder_path} \
+                      --output_path {output_folder_path} \
+                      --ch_mul {channel_multiplier} \
+                      --image_size {input_size}
+```
+
+#### Example
+```
+python test_dehaze.py --model_path weights/sddn_ihaze_180_11.h5 \
+                      --image_path ihaze \
+                      --output_path ihaze_dehazed \
+                      --ch_mul 0.25 \
+                      --image_size 512
+```
+
+#### Quick test with default configurations (input size: 512x512, channel multiplier: 0.25)
+```
+python test_dehaze.py --model_path weights/sddn_ihaze_180_11.h5 --image_path ihaze --output_path ihaze_dehazed
+```
+
+
 ## Results
 
-### Quantitative results:
+#### Quantitative results
 
 <p align="center">
 <img src="docs/quantitative_results.png" width="1000">
 </p>
 
-### Qualitative Results:
+#### Qualitative results
 
 <p align="center">
 <img src="docs/results_ihaze_ohaze.png" width="1000">
