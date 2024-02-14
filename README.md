@@ -26,6 +26,10 @@ The completion of this project is currently in progress, please stay tuned for u
 
 ## Test
 
+- Create environment & install required packages
+- Download pre-trained weights from [Hugging Face](https://huggingface.co/tranleanh/sddn)
+- Prepare a folder containing test images
+
 #### Command
 ```
 python test_dehaze.py --model_path {weight_path} \
@@ -49,6 +53,36 @@ python test_dehaze.py --model_path weights/sddn_ihaze_180_11.h5 \
 python test_dehaze.py --model_path weights/sddn_ihaze_180_11.h5 --image_path ihaze --output_path ihaze_dehazed
 ```
 
+## Train
+
+- Create environment & install required packages
+- Prepare dataset folder (a parent directory containing two sub-folders 'A' and 'B' like below):
+
+```bashrc
+.../path/to/data
+            | A (containing hazy images)
+            | B (containing clean images)
+*** Note: a pair of hazy-clean images must have the same name
+```
+
+- Configure training parameters in [train.py](https://github.com/tranleanh/sddn/blob/main/train.py#L154), the default settings are as below:
+
+```
+    # Train Parameters:
+    n_images = 4
+    batch_size = 1
+    epoch_num = 200
+    critic_updates = 5
+    learning_rate = 1E-4
+    loss_balance_weights = [10, 5, 5, 1]
+    teacher_weight_path = 'path_to_pretrained_teacher_model'
+    dataset_path = 'path_to_dataset'
+```  
+
+#### Command
+```
+python train.py
+```
 
 ## Results
 
