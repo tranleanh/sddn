@@ -8,7 +8,7 @@ from core.utils import load_hazy_clean_hint_soft_trans
 from core.losses import wasserstein_loss, perceptual_and_l2_loss, l2_loss, l2_loss_hint, \
                             perceptual_and_transmission_guided_loss, \
                             soft_perceptual_and_transmission_guided_loss, soft_l2_loss_hint
-from core.networks import unet_spp_swish_generator_model, unet_encoder_discriminator_model, gan_model
+from core.networks import SDDN, unet_encoder_discriminator_model, gan_model
 from core.networks import img_size
 
 from keras.layers import Input
@@ -16,14 +16,11 @@ from keras.models import Model
 from keras.optimizers import Adam
 
 
-BASE_DIR = 'weights/'
-
-
-# d_weight_path = 'weights/2nd/d/discriminator_185.h5'
-# g_weight_path = 'weights/2nd/g/generator_185_44.h5'
-
 
 def save_all_weights(d, g, epoch_number, current_loss):
+
+    BASE_DIR = 'weights/'
+
     save_dir_g = os.path.join(BASE_DIR, 'g')
     if not os.path.exists(save_dir_g):
         os.makedirs(save_dir_g)
@@ -36,23 +33,30 @@ def save_all_weights(d, g, epoch_number, current_loss):
     d.save_weights(os.path.join(save_dir_d, 'discriminator_{}.h5'.format(epoch_number)), True)
 
 
-def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
+def train(n_images, batch_size, epoch_num, critic_updates, teacher_weight_path, dataset_path, loss_balance_weights, learning_rate):
 
-    data = load_hazy_clean_hint_soft_trans('dataset/nhhaze', n_images)
+    data = load_hazy_clean_hint_soft_trans(dataset_path, n_images, teacher_weight_path)
     x_train, y_train, h_train, s_train, g_train = data['A'], data['B'], data['C'], data['D'], data['E']
 
-    slabel_decays = []
-    for i in range(epoch_num):
-        rate = [(epoch_num - i)/epoch_num]
-        rate = np.array(rate)
-        rate = np.reshape(rate, (1,1,1))
-        slabel_decays.append(rate)
+    delta = 0.5
+    loss_bal_decay_values = []
+    
+    for e in range(epoch_num):
+        if e <= delta*epoch_num: 
+            loss_bal_decay = 1 - e/(delta*epoch_num)
+        else: 
+            loss_bal_decay = 0
+
+        loss_bal_decay = np.array(loss_bal_decay)
+        loss_bal_decay = np.reshape(loss_bal_decay, (1,1,1))
+        loss_bal_decay_values.append(loss_bal_decay)
 
     print("Total data:", len(y_train))
 
 
     # Define GAN Model
-    g = unet_spp_swish_generator_model()
+    g = SDDN(ch_mul=0.25)
+    g.summary()
     d = unet_encoder_discriminator_model()
 
     inputs = Input(shape=(img_size,img_size,4))
@@ -65,19 +69,25 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
     d_on_g = Model(inputs=[inputs, guides, decays], outputs=[generated_image, guided_fm, generated_image_2, outputs])
 
 
+    retrain = False
+
+    if retrain:
+        d_weight_path = 'path_to_pretrained_critic_model'
+        g_weight_path = 'path_to_pretrained_generator_model'
+    else:
+        d_weight_path = ''
+        g_weight_path = ''
+
+
     # Load pre-trained weights
-    if g_weight_path != "" and d_weight_path != "":
+    if g_weight_path != '' and d_weight_path != '':
         g.load_weights(g_weight_path)
         d.load_weights(d_weight_path)
 
-    lr = 1E-4
-    decay_rate = lr/epoch_num*0.5
+    decay_rate = learning_rate/epoch_num*0.5
 
-    d_opt = Adam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=decay_rate)
-    d_on_g_opt = Adam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=decay_rate)
-
-    # d_opt = Adam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
-    # d_on_g_opt = Adam(lr=lr, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
+    d_opt = Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=decay_rate)
+    d_on_g_opt = Adam(lr=learning_rate, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=decay_rate)
 
 
     d.trainable = True
@@ -87,11 +97,10 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
     # Define Loss Function
     loss = [perceptual_and_transmission_guided_loss(guide=guides), \
-            soft_l2_loss_hint(slabel_decay=decays), \
-            soft_perceptual_and_transmission_guided_loss(guide=guides, slabel_decay=decays), wasserstein_loss]
+            soft_l2_loss_hint(loss_decay=decays), \
+            soft_perceptual_and_transmission_guided_loss(guide=guides, loss_decay=decays), wasserstein_loss]
 
-    loss_weights = [30, 10, 10, 1]
-    d_on_g.compile(optimizer=d_on_g_opt, loss=loss, loss_weights=loss_weights)
+    d_on_g.compile(optimizer=d_on_g_opt, loss=loss, loss_weights=loss_balance_weights)
     d.trainable = True
 
     output_true_batch, output_false_batch = np.ones((batch_size, 1)), -np.ones((batch_size, 1))
@@ -103,11 +112,10 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
         d_losses = []
         d_on_g_losses = []
 
+        loss_decay = loss_bal_decay_values[epoch]
 
-        print('Epoch ' + str(e+1) + ' / ' + str(epoch_num))
-        # print(loss_weights)
+        print(f'Epoch {str(e+1)}/{str(epoch_num)}: Loss decay = {loss_decay[0,0,0]}')
 
-        slabel_decay = slabel_decays[epoch]
 
         for index in tqdm(range(int(x_train.shape[0] / batch_size))):
             batch_indexes = permutated_indexes[index*batch_size:(index+1)*batch_size]
@@ -128,7 +136,7 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 
             d.trainable = False
 
-            d_on_g_loss = d_on_g.train_on_batch([image_blur_batch, guide_tran_batch, slabel_decay], [image_full_batch, image_hint_batch, image_soft_batch, output_true_batch])
+            d_on_g_loss = d_on_g.train_on_batch([image_blur_batch, guide_tran_batch, loss_decay], [image_full_batch, image_hint_batch, image_soft_batch, output_true_batch])
             # print(d_on_g_loss)
             d_on_g_losses.append(d_on_g_loss)
 
@@ -144,13 +152,15 @@ def train(n_images, batch_size, log_dir, epoch_num, critic_updates=5):
 if __name__ == '__main__':
 
     # Train Parameters:
-    n_images = 50
-    batch_size = 1
-    log_dir = False
+    n_images = 4
+    batch_size = 1       # (it's better to use batch_size = 1)
     epoch_num = 200
     critic_updates = 5
+    learning_rate = 1E-4
+    loss_balance_weights = [10, 5, 5, 1]
+    teacher_weight_path = 'path_to_pretrained_teacher_model'
+    dataset_path = 'path_to_dataset'
 
     # Train Network
-    train(n_images, batch_size, log_dir, epoch_num, critic_updates)
-
+    train(n_images, batch_size, epoch_num, critic_updates, teacher_weight_path, dataset_path, loss_balance_weights, learning_rate)
 
