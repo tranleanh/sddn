@@ -14,7 +14,7 @@ The completion of this project is currently in progress, please stay tuned for u
 - [x] Results on benchmarks (I-HAZE, O-HAZE, Dense-HAZE, NH-HAZE, SOTS-Outdoor, HSTS)
 - [x] Pre-trained weights ([Hugging Face](https://huggingface.co/tranleanh/sddn))
 - [x] Inference
-- [ ] Training 
+- [x] Training 
 
 ## Introduction
 
