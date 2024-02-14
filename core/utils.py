@@ -220,7 +220,7 @@ def gen_hazy_clean_hint_soft_trans(img_A, img_B, teacher_model):
 
 
 
-def load_hazy_clean_hint_soft_trans(path, n_images):
+def load_hazy_clean_hint_soft_trans(path, n_images, teacher_weight_path):
 
     if n_images < 0:
         n_images = float("inf")
@@ -232,8 +232,7 @@ def load_hazy_clean_hint_soft_trans(path, n_images):
 
     print('\n Loading teacher network:')
     teacher_model = unet_spp_large_swish_generator_model()
-    weight_path = '/mnt/data5/tranleanh/dehazing/edn-gtm-small_3_hint_nhhaze/core/teacher_weights/nhhaze_generator_in512_ep160_loss297.h5'
-    teacher_model.load_weights(weight_path)
+    teacher_model.load_weights(teacher_weight_path)
     print('-> Loading teacher network: Done.')
 
 
