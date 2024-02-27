@@ -116,12 +116,12 @@ python train.py
 Please cite our work if you use the data in this repo. 
 
 ```bibtex
-@misc{tran2024soft,
-  author = {Tran, Le-Anh and Park, Dong-Chul},
-  title = {Soft knowledge-based Distilled Dehazing Networks},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository}
+@article{tran2024soft,
+  title={Soft Knowledge-based Distilled Dehazing Networks},
+  author={Tran, Le-Anh and Park, Dong-Chul},
+  journal={Authorea Preprints},
+  year={2024},
+  publisher={Authorea}
 }
 ```
 
