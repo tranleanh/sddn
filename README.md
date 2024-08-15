@@ -11,6 +11,7 @@ Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl
 
 The completion of this project is currently in progress, please stay tuned for updates!
 
+- [x] Updating results for real-world hazy scenes
 - [x] Results on benchmarks (I-HAZE, O-HAZE, Dense-HAZE, NH-HAZE, SOTS-Outdoor, HSTS)
 - [x] Pre-trained weights ([Hugging Face](https://huggingface.co/tranleanh/sddn))
 - [x] Inference
