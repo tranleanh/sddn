@@ -1,11 +1,13 @@
 # SDDN: Soft Knowledge-based Distilled Dehazing Networks
 
-[![Models](https://img.shields.io/badge/Models-Hugging_Face-gold)](https://huggingface.co/tranleanh/sddn)
-[![Paper](https://img.shields.io/badge/Paper-TechRxiv-white)](https://www.techrxiv.org/doi/full/10.36227/techrxiv.170723333.32153858/v1)
+[![Weights](https://img.shields.io/badge/Weights-Hugging_Face-gold)](https://huggingface.co/tranleanh/sddn)
+[![Preprint](https://img.shields.io/badge/Preprint-TechRxiv-white)](https://www.techrxiv.org/doi/full/10.36227/techrxiv.170723333.32153858/v1)
 
-The official implementation of the paper "Soft Knowledge-based Distilled Dehazing Networks".
+The official implementation of the paper "Lightweight Image Dehazing Networks based on Soft Knowledge Distillation".
 
 Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl=en), [Dong-Chul Park](https://scholar.google.com/citations?user=VZUH4sUAAAAJ&hl=en)
+
+Journal: The Visual Computer (Springer), 2024
 
 ## Updates
 
@@ -117,6 +119,14 @@ python train.py
 Please cite our work if you use the data in this repo. 
 
 ```bibtex
+@article{tran2024lightweight,
+  title={Lightweight image dehazing networks based on soft knowledge distillation},
+  author={Tran, Le-Anh and Park, Dong-Chul},
+  journal={The Visual Computer},
+  year={2024},
+  publisher={Springer}
+}
+
 @article{tran2024soft,
   title={Soft Knowledge-based Distilled Dehazing Networks},
   author={Tran, Le-Anh and Park, Dong-Chul},
