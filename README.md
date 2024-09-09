@@ -95,7 +95,13 @@ python train.py
 <img src="docs/quantitative_results.png" width="1000">
 </p>
 
-#### Qualitative results
+#### PSNR-Param charts
+
+<p align="center">
+<img src="docs/psnr-param-tradeoff.png" width="1000">
+</p>
+
+#### Visual results
 
 <p align="center">
 <img src="docs/results_ihaze_ohaze.png" width="1000">
