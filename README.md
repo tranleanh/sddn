@@ -2,6 +2,7 @@
 
 [![Weights](https://img.shields.io/badge/Weights-Hugging_Face-gold)](https://huggingface.co/tranleanh/sddn)
 [![Preprint](https://img.shields.io/badge/Preprint-TechRxiv-white)](https://www.techrxiv.org/doi/full/10.36227/techrxiv.170723333.32153858/v1)
+[![Paper](https://img.shields.io/badge/Paper-Springer-blue)](https://link.springer.com/article/10.1007/s00371-024-03645-3)
 
 The official implementation of the paper "Lightweight Image Dehazing Networks based on Soft Knowledge Distillation".
 
@@ -9,6 +10,7 @@ Authors: [Le-Anh Tran](https://scholar.google.com/citations?user=WzcUE5YAAAAJ&hl
 
 Journal: The Visual Computer (Springer), 2024
 
+<!---
 ## Updates
 
 The completion of this project is currently in progress, please stay tuned for updates!
@@ -17,7 +19,8 @@ The completion of this project is currently in progress, please stay tuned for u
 - [x] Results on benchmarks (I-HAZE, O-HAZE, Dense-HAZE, NH-HAZE, SOTS-Outdoor, HSTS)
 - [x] Pre-trained weights ([Hugging Face](https://huggingface.co/tranleanh/sddn))
 - [x] Inference
-- [x] Training 
+- [x] Training
+--->
 
 ## Introduction
 
